@@ -1,0 +1,14 @@
+# Netlify configuration for the Inferno Agency site
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+# Single-page-app routing: let React Router handle /blog, /blog/:slug,
+# /thank-you, etc. instead of Netlify returning a 404 on direct loads.
+# (Function routes under /.netlify/ are excluded automatically.)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
