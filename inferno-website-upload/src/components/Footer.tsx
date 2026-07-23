@@ -135,7 +135,7 @@ const Footer: React.FC = () => {
 
         <div className="pt-8 border-t border-gray-800 text-center text-text-secondary text-sm">
           <p>
-            © {new Date().getFullYear()} Inferno Agency. All rights reserved.
+            © {new Date().getFullYear()} Inferno Management LLC. All rights reserved.
           </p>
         </div>
       </div>
