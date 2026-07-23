@@ -36,8 +36,8 @@ const services = [
   },
   {
     icon: <CreditCard size={32} />,
-    title: "Revenue Optimization",
-    description: "Strategic pricing, tiered subscriptions, and premium content planning to maximize earnings."
+    title: "Pricing & Strategy",
+    description: "Smart pricing and a real offer strategy, built around your audience and adjusted as you grow."
   },
   {
     icon: <TrendingUp size={32} />,
@@ -82,7 +82,7 @@ const ServicesSection: React.FC = () => {
         <div className="section-title">
           <h2 className="gradient-text inline-block">Our Services</h2>
           <p className="section-subtitle">
-            We provide comprehensive management services to help creators thrive and maximize their potential
+            We provide comprehensive management services to help creators grow while keeping their creative freedom
           </p>
         </div>
         

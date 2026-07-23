@@ -149,7 +149,7 @@ const CareersApplicationCTA: React.FC = () => {
                   value={formData.plan}
                   onChange={handleChange}
                   required
-                  placeholder="Revenue Improvement Plan"
+                  placeholder="Your plan to improve results"
                   className={inputStyle}
                   rows={3}
                 />

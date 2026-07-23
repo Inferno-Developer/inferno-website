@@ -19,6 +19,12 @@ const FORMS = {
       subs: { id: "fldWgEUeaiQAtj5ya", type: "float" },
       invitedBy: { id: "fldIXqHE4m8fEAdKW" },
       telegram: { id: "fldgXFUF8a0vkbEiu" },
+      // New qualification fields — these map by field NAME, so the Airtable
+      // "Leads" table must have fields named exactly: Country,
+      // "Months on Platform", "Instagram Followers".
+      country: { name: "Country" },
+      monthsOnPlatform: { name: "Months on Platform", type: "int" },
+      instagramFollowers: { name: "Instagram Followers", type: "int" },
     },
   },
   agency: {
@@ -75,9 +81,10 @@ exports.handler = async (event) => {
   for (const [key, spec] of Object.entries(config.map)) {
     const raw = incoming[key];
     if (raw === undefined || raw === "") continue;
-    if (spec.type === "float") fields[spec.id] = parseFloat(raw);
-    else if (spec.type === "int") fields[spec.id] = parseInt(raw, 10);
-    else fields[spec.id] = raw;
+    const atKey = spec.id || spec.name; // Airtable accepts field IDs or names
+    if (spec.type === "float") fields[atKey] = parseFloat(raw);
+    else if (spec.type === "int") fields[atKey] = parseInt(raw, 10);
+    else fields[atKey] = raw;
   }
 
   try {

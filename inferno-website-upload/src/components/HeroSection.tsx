@@ -30,13 +30,13 @@ const HeroSection: React.FC = () => {
       <div className="container-custom relative z-10 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="animate-fade-in mb-6">
-            Elevate Your <span className="gradient-text">Content Creation</span>{" "}
-            Career With Elite Management
+            Real Management for Creators{" "}
+            <span className="gradient-text">Serious About Growth</span>
           </h1>
 
           <p className="animate-fade-in text-xl md:text-2xl text-text-secondary mb-10 max-w-3xl mx-auto font-black">
-            Join the agency that's helped creators increase their earnings by up
-            to 300%. We handle the business, you create the content.
+            For creators already earning and ready to grow. You create, we run
+            everything else.
           </p>
 
           <div className="animate-fade-in flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">

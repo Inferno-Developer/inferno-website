@@ -7,7 +7,7 @@ const ValueProposition: React.FC = () => {
     "Access our proprietary growth and engagement strategies",
     "Get professional marketing and promotional campaigns",
     "Join our exclusive creator community for collaborations",
-    "Leverage native chatters to maximize fan interaction and revenue",
+    "A dedicated team handling your fan messages around the clock, in your voice",
     "Get a personalized niche strategy tailored to your brand",
     "Set and achieve clear performance goals with our focused support",
   ];
@@ -66,10 +66,10 @@ const ValueProposition: React.FC = () => {
                 <p className="italic text-text-secondary mb-4">
                   "Before teaming up with Inferno Agency, I was juggling content
                   and fan messages alone. Now I have a full support system that
-                  lets me focus on being creative while my income keeps
+                  lets me focus on being creative while my page keeps
                   growing."
                 </p>
-                <p className="font-semibold text-right">— Mia R.</p>
+                <p className="font-semibold text-right">Mia R.</p>
               </div>
 
               <div className="bg-background p-6 rounded-lg">
@@ -78,7 +78,7 @@ const ValueProposition: React.FC = () => {
                   I’ve built a loyal fanbase, and every campaign they run brings
                   results. I finally feel like a true businesswoman."
                 </p>
-                <p className="font-semibold text-right">— Zara L</p>
+                <p className="font-semibold text-right">Zara L.</p>
               </div>
 
               <div className="bg-background p-6 rounded-lg">
@@ -87,7 +87,7 @@ const ValueProposition: React.FC = () => {
                   chatters handle my fans with care, and I get strategy updates
                   that align with my goals. It’s a full package."
                 </p>
-                <p className="font-semibold text-right">— Bella S.</p>
+                <p className="font-semibold text-right">Bella S.</p>
               </div>
             </div>
           </div>

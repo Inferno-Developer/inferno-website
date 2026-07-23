@@ -2,6 +2,38 @@ import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
+const COUNTRIES = [
+  "United States",
+  "Canada",
+  "United Kingdom",
+  "Ireland",
+  "Australia",
+  "New Zealand",
+  "Germany",
+  "France",
+  "Netherlands",
+  "Spain",
+  "Italy",
+  "Portugal",
+  "Sweden",
+  "Norway",
+  "Denmark",
+  "Poland",
+  "Romania",
+  "Czechia",
+  "Hungary",
+  "Colombia",
+  "Mexico",
+  "Brazil",
+  "Argentina",
+  "Chile",
+  "South Africa",
+  "Philippines",
+  "India",
+  "United Arab Emirates",
+  "Other",
+];
+
 const CreatorApplicationCTA: React.FC = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -11,6 +43,9 @@ const CreatorApplicationCTA: React.FC = () => {
     subs: "",
     invitedBy: "",
     telegram: "",
+    country: "",
+    monthsOnPlatform: "",
+    instagramFollowers: "",
   });
 
   const [submitting, setSubmitting] = useState(false);
@@ -18,7 +53,9 @@ const CreatorApplicationCTA: React.FC = () => {
   const inputStyle =
     "w-full px-4 py-3 bg-background border border-gray-700 rounded-lg text-sm text-text-primary placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-accent-purple";
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -60,8 +97,8 @@ const CreatorApplicationCTA: React.FC = () => {
               Creator Application
             </h2>
             <p className="text-text-secondary text-center mb-8 max-w-2xl mx-auto">
-              Apply to join Inferno Agency as a creator and unlock your full
-              potential.
+              For creators already earning and ready to grow. Tell us a little
+              about you and we'll take it from there.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -91,7 +128,7 @@ const CreatorApplicationCTA: React.FC = () => {
                     value={formData.income}
                     onChange={handleChange}
                     required
-                    placeholder="Platform Earnings ($/month)"
+                    placeholder="Monthly income"
                     className={inputStyle}
                   />
                   <input
@@ -100,7 +137,7 @@ const CreatorApplicationCTA: React.FC = () => {
                     value={formData.subs}
                     onChange={handleChange}
                     required
-                    placeholder="New Paid Subscribers (Daily)"
+                    placeholder="New paid subscribers per day"
                     className={inputStyle}
                   />
                 </div>
@@ -119,6 +156,46 @@ const CreatorApplicationCTA: React.FC = () => {
                     onChange={handleChange}
                     required
                     placeholder="Telegram Handle"
+                    className={inputStyle}
+                  />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <select
+                    name="country"
+                    value={formData.country}
+                    onChange={handleChange}
+                    required
+                    className={`${inputStyle} appearance-none`}
+                  >
+                    <option value="" disabled>
+                      Country
+                    </option>
+                    {COUNTRIES.map((c) => (
+                      <option key={c} value={c}>
+                        {c}
+                      </option>
+                    ))}
+                  </select>
+                  <input
+                    type="number"
+                    name="instagramFollowers"
+                    value={formData.instagramFollowers}
+                    onChange={handleChange}
+                    required
+                    min="0"
+                    placeholder="Instagram follower count"
+                    className={inputStyle}
+                  />
+                </div>
+                <div className="grid grid-cols-1 gap-6">
+                  <input
+                    type="number"
+                    name="monthsOnPlatform"
+                    value={formData.monthsOnPlatform}
+                    onChange={handleChange}
+                    required
+                    min="0"
+                    placeholder="Time on platform (months)"
                     className={inputStyle}
                   />
                 </div>

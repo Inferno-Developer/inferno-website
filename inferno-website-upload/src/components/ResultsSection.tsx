@@ -1,5 +1,5 @@
 import React from "react";
-import { TrendingUp, DollarSign, Clock } from "lucide-react";
+import { MessageCircle, Camera, Clock } from "lucide-react";
 
 interface StatCardProps {
   icon: React.ReactNode;
@@ -26,23 +26,22 @@ const ResultsSection: React.FC = () => {
     <section id="results" className="section bg-background-dark">
       <div className="container-custom">
         <div className="section-title">
-          <h2 className="gradient-text inline-block">Our Results</h2>
+          <h2 className="gradient-text inline-block">How We Work</h2>
           <p className="section-subtitle">
-            Our management strategies deliver real growth and revenue for our
-            creators
+            Systems that give you your time back and a real plan for growth.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           <StatCard
-            icon={<TrendingUp size={32} className="text-white" />}
-            value="180%"
-            label="Average Growth in First 3 Months"
+            icon={<MessageCircle size={32} className="text-white" />}
+            value="24/7"
+            label="Fan & Message Coverage"
           />
           <StatCard
-            icon={<DollarSign size={32} className="text-white" />}
-            value="$2M+"
-            label="Revenue Generated for Creators"
+            icon={<Camera size={32} className="text-white" />}
+            value="In-House"
+            label="Las Vegas Production"
           />
           <StatCard
             icon={<Clock size={32} className="text-white" />}
@@ -68,8 +67,8 @@ const ResultsSection: React.FC = () => {
                   </h4>
                   <p className="text-text-secondary">
                     We conduct a comprehensive audit of your current content,
-                    audience demographics, engagement patterns, and revenue
-                    streams to identify growth opportunities.
+                    audience demographics, engagement patterns, and your
+                    content and offers to identify growth opportunities.
                   </p>
                 </div>
               </div>
@@ -84,8 +83,8 @@ const ResultsSection: React.FC = () => {
                   </h4>
                   <p className="text-text-secondary">
                     Based on our analysis, we develop a tailored strategy that
-                    aligns with your brand, content style, and financial goals
-                    to maximize both subscriber count and revenue.
+                    aligns with your brand and content style to grow both your
+                    audience and your page.
                   </p>
                 </div>
               </div>
@@ -119,7 +118,7 @@ const ResultsSection: React.FC = () => {
                   <p className="text-text-secondary">
                     We constantly monitor performance metrics, gather subscriber
                     feedback, and adapt our strategies to ensure sustained
-                    growth and maximized revenue.
+                    growth and a business that runs without you doing everything.
                   </p>
                 </div>
               </div>

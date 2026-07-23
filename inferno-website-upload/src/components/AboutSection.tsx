@@ -58,9 +58,9 @@ const AboutSection: React.FC = () => {
 
               <div className="flex flex-col items-center p-4 bg-background-light rounded-lg">
                 <Award size={28} className="text-accent-purple mb-2" />
-                <p className="font-bold text-lg">#1</p>
+                <p className="font-bold text-lg">Limited</p>
                 <p className="text-text-secondary text-sm text-center">
-                  Growth Agency
+                  Roster by Design
                 </p>
               </div>
             </div>

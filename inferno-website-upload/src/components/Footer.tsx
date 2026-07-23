@@ -78,6 +78,38 @@ const Footer: React.FC = () => {
                   <ChevronRight size={16} className="mr-2" /> Blog
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/what-we-handle"
+                  className="text-text-secondary hover:text-accent-purple transition-colors flex items-center"
+                >
+                  <ChevronRight size={16} className="mr-2" /> What We Handle
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/why-inferno"
+                  className="text-text-secondary hover:text-accent-purple transition-colors flex items-center"
+                >
+                  <ChevronRight size={16} className="mr-2" /> Why Inferno
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/vegas-shoots"
+                  className="text-text-secondary hover:text-accent-purple transition-colors flex items-center"
+                >
+                  <ChevronRight size={16} className="mr-2" /> Vegas Shoots
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/fit"
+                  className="text-text-secondary hover:text-accent-purple transition-colors flex items-center"
+                >
+                  <ChevronRight size={16} className="mr-2" /> See If You Fit
+                </Link>
+              </li>
             </ul>
           </div>
 

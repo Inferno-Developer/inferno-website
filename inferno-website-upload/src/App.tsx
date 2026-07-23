@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import ServicesSection from "./components/ServicesSection";
@@ -11,8 +10,17 @@ import Footer from "./components/Footer";
 import ThankYouPage from "./components/ThankYouPage";
 import BlogIndex from "./components/BlogIndex";
 import BlogPostPage from "./components/BlogPostPage";
+import WhatWeHandle from "./components/pages/WhatWeHandle";
+import WhyInferno from "./components/pages/WhyInferno";
+import VegasShoots from "./components/pages/VegasShoots";
+import SeeIfYouFit from "./components/pages/SeeIfYouFit";
+import { useSeo } from "./utils/useSeo";
 
 function HomePage() {
+  useSeo(
+    "InfernoAgency | Creator Management",
+    "Professional creator management. We run the business side so you can focus on creating. No upfront fees, we only earn when you do."
+  );
   return (
     <div className="min-h-screen bg-background-dark text-text-primary">
       <Navbar />
@@ -28,34 +36,16 @@ function HomePage() {
 }
 
 function App() {
-  const location = useLocation();
-
-  useEffect(() => {
-    // Set the page title based on route
-    const isThankYouPage = location.pathname === "/thank-you";
-    document.title = isThankYouPage 
-      ? "Thank You | Inferno Agency" 
-      : "Inferno Agency | Premium Creators Management";
-
-    // Optional: Add meta description
-    const metaDescription = document.createElement("meta");
-    metaDescription.name = "description";
-    metaDescription.content = isThankYouPage
-      ? "Thank you for your submission to Inferno Agency. Our team will contact you shortly."
-      : "Inferno Agency - Elite management for creators. Maximize your earnings and growth with our professional team.";
-    document.head.appendChild(metaDescription);
-
-    return () => {
-      document.head.removeChild(metaDescription);
-    };
-  }, [location.pathname]);
-
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/thank-you" element={<ThankYouPage />} />
       <Route path="/blog" element={<BlogIndex />} />
       <Route path="/blog/:slug" element={<BlogPostPage />} />
+      <Route path="/what-we-handle" element={<WhatWeHandle />} />
+      <Route path="/why-inferno" element={<WhyInferno />} />
+      <Route path="/vegas-shoots" element={<VegasShoots />} />
+      <Route path="/fit" element={<SeeIfYouFit />} />
     </Routes>
   );
 }
