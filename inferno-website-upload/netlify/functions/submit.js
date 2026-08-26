@@ -16,15 +16,8 @@ const FORMS = {
       instagram: { id: "fldmxBmlwnpqa0T1p" },
       email: { id: "fldZfKiDechvnjYr5" },
       income: { id: "fldSMqTI72cUdH9cW", type: "float" },
-      subs: { id: "fldWgEUeaiQAtj5ya", type: "float" },
-      invitedBy: { id: "fldIXqHE4m8fEAdKW" },
-      telegram: { id: "fldgXFUF8a0vkbEiu" },
-      // New qualification fields — these map by field NAME, so the Airtable
-      // "Leads" table must have fields named exactly: Country,
-      // "Months on Platform", "Instagram Followers".
-      country: { name: "Country" },
-      monthsOnPlatform: { name: "Months on Platform", type: "int" },
       instagramFollowers: { name: "Instagram Followers", type: "int" },
+      telegram: { id: "fldgXFUF8a0vkbEiu" }, 
     },
   },
   agency: {
