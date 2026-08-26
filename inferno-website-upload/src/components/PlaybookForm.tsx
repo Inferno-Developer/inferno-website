@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const inputStyle =
   "w-full px-4 py-3 bg-background border border-gray-700 rounded-lg text-sm text-text-primary placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-accent-purple";
 
 const PlaybookForm: React.FC = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,7 +14,6 @@ const PlaybookForm: React.FC = () => {
     telegram: "",
   });
   const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -32,7 +33,9 @@ const PlaybookForm: React.FC = () => {
         console.error(await res.text());
         throw new Error("Failed to submit");
       }
-      setSubmitted(true);
+      // Redirect to the dedicated confirmation page (its own unique URL, so
+      // it can carry its own conversion tag).
+      navigate("/playbook-thank-you");
     } catch (err) {
       console.error("Playbook form error:", err);
       alert("Something went wrong. Please try again.");
@@ -40,23 +43,9 @@ const PlaybookForm: React.FC = () => {
     }
   };
 
-  if (submitted) {
-    return (
-      <div className="text-center py-6">
-        <div className="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mx-auto mb-5">
-          <CheckCircle size={32} className="text-white" />
-        </div>
-        <h3 className="text-2xl font-bold mb-3">You're in.</h3>
-        <p className="text-text-secondary">
-          Check your inbox, your playbook is on its way. If you don't see it in
-          a couple of minutes, check your spam folder.
-        </p>
-      </div>
-    );
-  }
-
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      {/* Single stacked column on every screen size — reads cleanly on mobile. */}
       <input
         name="name"
         value={formData.name}

@@ -3,10 +3,10 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { fireConversion, CONVERSIONS } from "../utils/gtag";
 
-const ThankYouPage: React.FC = () => {
-  // Record the Google Ads "Creator Application" conversion on page load.
+const PlaybookThankYouPage: React.FC = () => {
+  // Record the Google Ads "Playbook Lead" conversion on page load.
   useEffect(() => {
-    fireConversion(CONVERSIONS.creatorApplication);
+    fireConversion(CONVERSIONS.playbookLead);
   }, []);
 
   return (
@@ -32,15 +32,14 @@ const ThankYouPage: React.FC = () => {
               </svg>
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold mb-6">
-              Thank You for Your Submission!
+              Your playbook is on the way.
             </h1>
             <p className="text-text-secondary text-lg mb-8 max-w-xl mx-auto">
-              Someone from our team will reach out to you shortly. We appreciate your interest in Inferno Agency.
+              Check your inbox in the next couple of minutes. If it's not there,
+              take a quick look in your spam or promotions folder and mark it as
+              safe so you don't miss what we send next.
             </p>
-            <a
-              href="/"
-              className="btn-primary inline-flex items-center"
-            >
+            <a href="/" className="btn-primary inline-flex items-center">
               Return to Homepage
             </a>
           </div>
@@ -51,4 +50,4 @@ const ThankYouPage: React.FC = () => {
   );
 };
 
-export default ThankYouPage;
+export default PlaybookThankYouPage;
