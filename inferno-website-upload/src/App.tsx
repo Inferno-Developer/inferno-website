@@ -14,6 +14,8 @@ import WhatWeHandle from "./components/pages/WhatWeHandle";
 import WhyInferno from "./components/pages/WhyInferno";
 import VegasShoots from "./components/pages/VegasShoots";
 import SeeIfYouFit from "./components/pages/SeeIfYouFit";
+import Playbook from "./components/pages/Playbook";
+import PlaybookPromo from "./components/PlaybookPromo";
 import { useSeo } from "./utils/useSeo";
 
 function HomePage() {
@@ -29,6 +31,7 @@ function HomePage() {
       <ValueProposition />
       <ResultsSection />
       <AboutSection />
+      <PlaybookPromo />
       <ApplicationCTA />
       <Footer />
     </div>
@@ -46,6 +49,7 @@ function App() {
       <Route path="/why-inferno" element={<WhyInferno />} />
       <Route path="/vegas-shoots" element={<VegasShoots />} />
       <Route path="/fit" element={<SeeIfYouFit />} />
+      <Route path="/playbook" element={<Playbook />} />
     </Routes>
   );
 }

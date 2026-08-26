@@ -71,6 +71,9 @@ const Navbar: React.FC = () => {
           <Link to="/blog" className="nav-link">
             Blog
           </Link>
+          <Link to="/playbook" className="nav-link">
+            Playbook
+          </Link>
           <a href={`${prefix}#apply`} className="btn-primary">
             Apply Now
           </a>
@@ -106,6 +109,13 @@ const Navbar: React.FC = () => {
             onClick={() => setIsOpen(false)}
           >
             Blog
+          </Link>
+          <Link
+            to="/playbook"
+            className="text-xl nav-link"
+            onClick={() => setIsOpen(false)}
+          >
+            Playbook
           </Link>
           <a
             href={`${prefix}#apply`}
