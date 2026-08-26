@@ -8,6 +8,7 @@ import AboutSection from "./components/AboutSection";
 import ApplicationCTA from "./components/ApplicationCTA";
 import Footer from "./components/Footer";
 import ThankYouPage from "./components/ThankYouPage";
+import PlaybookThankYouPage from "./components/PlaybookThankYouPage";
 import BlogIndex from "./components/BlogIndex";
 import BlogPostPage from "./components/BlogPostPage";
 import WhatWeHandle from "./components/pages/WhatWeHandle";
@@ -43,6 +44,7 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/thank-you" element={<ThankYouPage />} />
+      <Route path="/playbook-thank-you" element={<PlaybookThankYouPage />} />
       <Route path="/blog" element={<BlogIndex />} />
       <Route path="/blog/:slug" element={<BlogPostPage />} />
       <Route path="/what-we-handle" element={<WhatWeHandle />} />
