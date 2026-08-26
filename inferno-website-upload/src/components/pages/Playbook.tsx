@@ -8,7 +8,7 @@ import { useSeo } from "../../utils/useSeo";
 // PASTE THE AIRTABLE FORM EMBED HERE.
 // Put Mitch's Airtable form <iframe ...></iframe> code between the backticks
 // below (keep it as one string). Until it's filled in, a placeholder shows.
-const AIRTABLE_FORM_EMBED = `<iframe class="airtable-embed" src="https://airtable.com/embed/appZ57oHkxygjxP2t/pagOvbdaWV4rata3n/form" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>`;
+const AIRTABLE_FORM_EMBED = `<iframe class="airtable-embed" src="https://airtable.com/embed/appZ57oHkxygjxP2t/pagOvbdaWV4rata3n/form" frameborder="0" onmousewheel="" width="100%" height="920" style="background: transparent; border: none; border-radius: 8px;"></iframe>`;
 // ─────────────────────────────────────────────────────────────────────────
 
 const insideItems = [
