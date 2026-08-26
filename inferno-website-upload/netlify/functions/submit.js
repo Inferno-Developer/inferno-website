@@ -52,6 +52,20 @@ const FORMS = {
       basedIn: { id: "fldcRD4MnNIgWNZGU" },
     },
   },
+  // Playbook lead magnet. Writes to Leads and stamps Source = Playbook so the
+  // "Playbook Delivery" automation fires and emails the PDF.
+  playbook: {
+    table: "Leads",
+    map: {
+      name: { id: "fldMp2PQOT5JeZeaz" }, // Name
+      email: { id: "fldZfKiDechvnjYr5" }, // Email
+      instagram: { id: "fldmxBmlwnpqa0T1p" }, // Instagram Handle
+      telegram: { id: "fldgXFUF8a0vkbEiu" }, // Telegram Handle
+    },
+    constants: {
+      fldBAdVkkeYXpQD0z: "Playbook", // Source (single select)
+    },
+  },
 };
 
 exports.handler = async (event) => {
@@ -86,6 +100,8 @@ exports.handler = async (event) => {
     else if (spec.type === "int") fields[atKey] = parseInt(raw, 10);
     else fields[atKey] = raw;
   }
+  // Always-set values (e.g. Source = Playbook) that aren't user inputs.
+  if (config.constants) Object.assign(fields, config.constants);
 
   try {
     const res = await fetch(
@@ -98,7 +114,7 @@ exports.handler = async (event) => {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ fields }),
+        body: JSON.stringify({ fields, typecast: true }),
       }
     );
 

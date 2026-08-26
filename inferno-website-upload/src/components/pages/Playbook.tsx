@@ -2,14 +2,8 @@ import React from "react";
 import { Flame } from "lucide-react";
 import { PageShell } from "./PageShell";
 import PlaybookCover from "../PlaybookCover";
+import PlaybookForm from "../PlaybookForm";
 import { useSeo } from "../../utils/useSeo";
-
-// ─────────────────────────────────────────────────────────────────────────
-// PASTE THE AIRTABLE FORM EMBED HERE.
-// Put Mitch's Airtable form <iframe ...></iframe> code between the backticks
-// below (keep it as one string). Until it's filled in, a placeholder shows.
-const AIRTABLE_FORM_EMBED = `<iframe class="airtable-embed" src="https://airtable.com/embed/appZ57oHkxygjxP2t/pagOvbdaWV4rata3n/form" frameborder="0" onmousewheel="" width="100%" height="920" style="background: transparent; border: none; border-radius: 8px;"></iframe>`;
-// ─────────────────────────────────────────────────────────────────────────
 
 const insideItems = [
   "The full path from a stranger scrolling to a paying fan, mapped on one page",
@@ -69,19 +63,7 @@ const Playbook: React.FC = () => {
             Get the playbook
           </h2>
 
-          {AIRTABLE_FORM_EMBED ? (
-            <div
-              className="playbook-embed"
-              dangerouslySetInnerHTML={{ __html: AIRTABLE_FORM_EMBED }}
-            />
-          ) : (
-            <div className="rounded-lg border border-dashed border-gray-600 p-10 text-center text-text-muted">
-              The signup form will appear here.
-              {/* Airtable form embed slot. Mitch pastes the iframe into
-                  AIRTABLE_FORM_EMBED above. Do NOT point ads at this page
-                  until the embed is in place. */}
-            </div>
-          )}
+          <PlaybookForm />
 
           {/* Small print */}
           <p className="text-text-muted text-sm mt-6 text-center">
