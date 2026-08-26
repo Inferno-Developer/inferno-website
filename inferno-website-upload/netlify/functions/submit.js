@@ -16,7 +16,7 @@ const FORMS = {
       instagram: { id: "fldmxBmlwnpqa0T1p" },
       email: { id: "fldZfKiDechvnjYr5" },
       income: { id: "fldSMqTI72cUdH9cW", type: "float" },
-      instagramFollowers: { name: "Instagram Followers", type: "int" },
+      instagramFollowers: { id: "fldPZ6IVl277gm32S" },
       telegram: { id: "fldgXFUF8a0vkbEiu" }, 
     },
   },
