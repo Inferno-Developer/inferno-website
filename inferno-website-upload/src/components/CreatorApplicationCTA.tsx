@@ -2,36 +2,30 @@ import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
+// These option lists must match the single-select choices in the Airtable
+// "Leads" table exactly, so submissions land in the right band with no
+// stray options created.
 const COUNTRIES = [
   "United States",
   "Canada",
   "United Kingdom",
-  "Ireland",
   "Australia",
-  "New Zealand",
-  "Germany",
-  "France",
-  "Netherlands",
-  "Spain",
-  "Italy",
-  "Portugal",
-  "Sweden",
-  "Norway",
-  "Denmark",
-  "Poland",
-  "Romania",
-  "Czechia",
-  "Hungary",
-  "Colombia",
-  "Mexico",
-  "Brazil",
-  "Argentina",
-  "Chile",
-  "South Africa",
-  "Philippines",
-  "India",
-  "United Arab Emirates",
   "Other",
+];
+
+const FOLLOWER_BANDS = [
+  "Under 5,000",
+  "5,000 to 10,000",
+  "10,000 to 50,000",
+  "50,000 to 100,000",
+  "Over 100,000",
+];
+
+const TIME_ON_PLATFORM = [
+  "Less than 3 months",
+  "3 to 6 months",
+  "6 to 12 months",
+  "Over a year",
 ];
 
 const CreatorApplicationCTA: React.FC = () => {
@@ -176,28 +170,40 @@ const CreatorApplicationCTA: React.FC = () => {
                       </option>
                     ))}
                   </select>
-                  <input
-                    type="number"
+                  <select
                     name="instagramFollowers"
                     value={formData.instagramFollowers}
                     onChange={handleChange}
                     required
-                    min="0"
-                    placeholder="Instagram follower count"
-                    className={inputStyle}
-                  />
+                    className={`${inputStyle} appearance-none`}
+                  >
+                    <option value="" disabled>
+                      Instagram followers
+                    </option>
+                    {FOLLOWER_BANDS.map((b) => (
+                      <option key={b} value={b}>
+                        {b}
+                      </option>
+                    ))}
+                  </select>
                 </div>
                 <div className="grid grid-cols-1 gap-6">
-                  <input
-                    type="number"
+                  <select
                     name="monthsOnPlatform"
                     value={formData.monthsOnPlatform}
                     onChange={handleChange}
                     required
-                    min="0"
-                    placeholder="Time on platform (months)"
-                    className={inputStyle}
-                  />
+                    className={`${inputStyle} appearance-none`}
+                  >
+                    <option value="" disabled>
+                      Time on platform
+                    </option>
+                    {TIME_ON_PLATFORM.map((t) => (
+                      <option key={t} value={t}>
+                        {t}
+                      </option>
+                    ))}
+                  </select>
                 </div>
 
                 <div className="flex justify-end">
