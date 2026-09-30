@@ -1,13 +1,23 @@
 import React, { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { fireConversion, fireMetaEvent, CONVERSIONS } from "../utils/gtag";
 
 const ThankYouPage: React.FC = () => {
-  // Record the Creator Application conversion on page load — Google Ads + Meta.
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Fire the Creator Application conversion ONLY when the visitor got here by
+  // actually completing the form (the submit handler passes state.submitted).
+  // Direct visits, refreshes, bookmarks, shared links and crawlers do not fire.
   useEffect(() => {
+    if (!(location.state as { submitted?: boolean } | null)?.submitted) return;
     fireConversion(CONVERSIONS.creatorApplication);
     fireMetaEvent("SubmitApplication", { content_name: "Creator Application" });
+    // Clear the flag so a refresh can't re-fire the conversion.
+    navigate(location.pathname, { replace: true, state: {} });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

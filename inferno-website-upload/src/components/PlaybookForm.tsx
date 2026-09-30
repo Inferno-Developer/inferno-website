@@ -33,9 +33,10 @@ const PlaybookForm: React.FC = () => {
         console.error(await res.text());
         throw new Error("Failed to submit");
       }
-      // Redirect to the dedicated confirmation page (its own unique URL, so
-      // it can carry its own conversion tag).
-      navigate("/playbook-thank-you");
+      // Redirect to the dedicated confirmation page. The `submitted` flag is
+      // what gates the conversion event there, so it fires only on a real
+      // completed submission.
+      navigate("/playbook-thank-you", { state: { submitted: true } });
     } catch (err) {
       console.error("Playbook form error:", err);
       alert("Something went wrong. Please try again.");

@@ -53,8 +53,10 @@ const CreatorApplicationCTA: React.FC = () => {
 
     try {
       await submitToAirtable();
-      // Redirect to thank-you page instead of showing inline confirmation
-      navigate("/thank-you");
+      // Redirect to thank-you page instead of showing inline confirmation.
+      // The `submitted` flag is what gates the conversion event on the
+      // thank-you page, so it fires only on a real completed submission.
+      navigate("/thank-you", { state: { submitted: true } });
     } catch (err) {
       console.error("Form submission error:", err);
       alert("Something went wrong. Please try again.");
