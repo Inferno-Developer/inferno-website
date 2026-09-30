@@ -23,3 +23,23 @@ export function fireConversion(sendTo: string): void {
     gtag("event", "conversion", { send_to: sendTo });
   }
 }
+
+// Meta Pixel conversion tracking.
+//
+// The base pixel (fbq) is loaded in index.html and defines the global `fbq`
+// function immediately (it queues), so this fires reliably even while the
+// external fbevents.js is still loading. Same SPA reasoning as the Google tag:
+// we fire a standard event on the thank-you pages, not a URL-based rule.
+
+type FbqFn = (...args: unknown[]) => void;
+
+export function fireMetaEvent(
+  eventName: string,
+  params?: Record<string, unknown>
+): void {
+  if (typeof window === "undefined") return;
+  const fbq = (window as unknown as { fbq?: FbqFn }).fbq;
+  if (typeof fbq === "function") {
+    fbq("track", eventName, params ?? {});
+  }
+}
