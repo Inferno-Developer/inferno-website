@@ -1,5 +1,5 @@
 export interface BlogPost {
-  /** URL-friendly identifier, e.g. "growing-on-onlyfans" */
+  /** URL-friendly identifier, e.g. "creator-growth-basics" */
   slug: string;
   title: string;
   /** Short summary shown on the blog index cards */
