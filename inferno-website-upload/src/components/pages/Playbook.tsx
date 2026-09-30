@@ -6,7 +6,7 @@ import PlaybookForm from "../PlaybookForm";
 import { useSeo } from "../../utils/useSeo";
 
 const insideItems = [
-  "The full path from a stranger scrolling to a paying fan, mapped on one page",
+  "The full path from a stranger scrolling to a paying subscriber, mapped on one page",
   "What to post, how often, and the three-part structure every video needs",
   "The five Instagram mistakes that end big accounts",
   "How the top creators run their day to day, VIP and Free",
@@ -23,7 +23,7 @@ const Playbook: React.FC = () => {
     <PageShell
       eyebrow="The Inferno Growth Playbook"
       title="The Playbook We Hand Every Creator We Sign"
-      subline="The complete system we run for the creators we manage. Where your traffic should go, what to post, how to turn followers into paying fans, and how to keep them month after month. Yours, in full."
+      subline="The complete system we run for the creators we manage. Where your traffic should go, what to post, how to turn followers into paying subscribers, and how to keep them month after month. Yours, in full."
     >
       <div className="max-w-3xl mx-auto">
         {/* Optional cover visual */}
