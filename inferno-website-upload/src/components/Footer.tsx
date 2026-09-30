@@ -133,9 +133,34 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-gray-800 text-center text-text-secondary text-sm">
+        <div className="pt-8 border-t border-gray-800 text-center text-text-secondary text-sm space-y-3">
           <p>
-            © {new Date().getFullYear()} Inferno Management LLC. All rights reserved.
+            Inferno Management LLC · Las Vegas, NV, United States ·{" "}
+            <a
+              href="mailto:infernomanagementagency@gmail.com"
+              className="hover:text-accent-purple transition-colors"
+            >
+              infernomanagementagency@gmail.com
+            </a>
+          </p>
+          <p className="flex items-center justify-center gap-4">
+            <Link
+              to="/privacy"
+              className="hover:text-accent-purple transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <span className="text-gray-700">·</span>
+            <Link
+              to="/terms"
+              className="hover:text-accent-purple transition-colors"
+            >
+              Terms of Service
+            </Link>
+          </p>
+          <p>
+            © {new Date().getFullYear()} Inferno Management LLC. All rights
+            reserved.
           </p>
         </div>
       </div>

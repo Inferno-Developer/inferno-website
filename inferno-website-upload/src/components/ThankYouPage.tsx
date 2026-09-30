@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { fireConversion, CONVERSIONS } from "../utils/gtag";
+import { fireConversion, fireMetaEvent, CONVERSIONS } from "../utils/gtag";
 
 const ThankYouPage: React.FC = () => {
-  // Record the Google Ads "Creator Application" conversion on page load.
+  // Record the Creator Application conversion on page load — Google Ads + Meta.
   useEffect(() => {
     fireConversion(CONVERSIONS.creatorApplication);
+    fireMetaEvent("SubmitApplication", { content_name: "Creator Application" });
   }, []);
 
   return (

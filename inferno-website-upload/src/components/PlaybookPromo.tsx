@@ -28,8 +28,8 @@ const PlaybookPromo: React.FC = () => {
             </h2>
             <p className="text-text-secondary text-lg mb-8 max-w-xl">
               The complete system our creators run. Traffic, content, converting
-              followers into paying fans, and keeping them month after month. 12
-              pages, zero fluff.
+              followers into paying subscribers, and keeping them month after
+              month. 12 pages, zero fluff.
             </p>
             <Link to="/playbook" className="btn-primary inline-flex items-center">
               Get the Playbook <ArrowRight size={18} className="ml-2" />

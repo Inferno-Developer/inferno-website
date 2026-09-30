@@ -45,19 +45,19 @@ const HeroSection: React.FC = () => {
             </a>
           </div>
 
-          <div className="animate-fade-in mt-10">
+          <div className="animate-fade-in mt-6">
             <a
               href="https://t.me/Inferno_CEO"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center justify-center text-accent-purple hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-text-muted hover:text-accent-purple transition-colors text-sm"
             >
               <img
                 src="/telegram.svg"
-                alt="Telegram"
-                className="w-12 h-12 mb-2"
+                alt=""
+                className="w-4 h-4 opacity-70"
               />
-              <span className="text-sm">Reach Us On Telegram</span>
+              Prefer Telegram? Message us
             </a>
           </div>
 

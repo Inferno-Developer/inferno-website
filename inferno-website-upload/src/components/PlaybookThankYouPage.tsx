@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { fireConversion, CONVERSIONS } from "../utils/gtag";
+import { fireConversion, fireMetaEvent, CONVERSIONS } from "../utils/gtag";
 
 const PlaybookThankYouPage: React.FC = () => {
-  // Record the Google Ads "Playbook Lead" conversion on page load.
+  // Record the Playbook Lead conversion on page load — Google Ads + Meta.
   useEffect(() => {
     fireConversion(CONVERSIONS.playbookLead);
+    fireMetaEvent("Lead", { content_name: "Growth Playbook" });
   }, []);
 
   return (

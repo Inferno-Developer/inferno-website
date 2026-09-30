@@ -25,7 +25,7 @@ const AboutSection: React.FC = () => {
             <h3 className="text-2xl font-bold mb-6">Our Story</h3>
             <p className="text-text-secondary mb-4">
               Inferno Agency was born from one simple idea: creators deserve
-              better. We’re a new agency, but we’re not here to play it safe. We
+              better. Four years in, we’re not here to play it safe. We
               saw too many talented models struggling with poor management,
               confusing strategies, or trying to do everything alone. So we
               built something different. Inferno is about fire, passion, energy,
@@ -50,7 +50,7 @@ const AboutSection: React.FC = () => {
 
               <div className="flex flex-col items-center p-4 bg-background-light rounded-lg">
                 <Briefcase size={28} className="text-accent-purple mb-2" />
-                <p className="font-bold text-lg">3+ Years</p>
+                <p className="font-bold text-lg">4 Years</p>
                 <p className="text-text-secondary text-sm text-center">
                   Industry Experience
                 </p>
