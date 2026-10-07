@@ -25,50 +25,73 @@ const Playbook: React.FC = () => {
       title="The Playbook We Hand Every Creator We Sign"
       subline="The complete system we run for the creators we manage. Where your traffic should go, what to post, how to turn followers into paying subscribers, and how to keep them month after month. Yours, in full."
     >
-      <div className="max-w-3xl mx-auto">
-        {/* Optional cover visual */}
-        <div className="mb-14">
-          <PlaybookCover />
+      <div className="max-w-5xl mx-auto">
+        {/* Top section: cover + form side by side on desktop, stacked on mobile.
+            The form sits above the fold so visitors can act immediately. */}
+        <div className="grid md:grid-cols-2 gap-10 lg:gap-14 items-center mb-16">
+          {/* Cover visual keeps its spot on the left on desktop. On mobile it
+              drops below the form so the form stays nearest the top. */}
+          <div className="order-2 md:order-1">
+            <PlaybookCover />
+          </div>
+
+          {/* Form card — first on mobile, right column on desktop */}
+          <div
+            id="get-the-playbook"
+            className="order-1 md:order-2 bg-background-light rounded-2xl p-8 sm:p-10 shadow-xl scroll-mt-28"
+          >
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-center">
+              Get the playbook
+            </h2>
+            <p className="text-text-muted text-sm mb-6 text-center">
+              Free. Sent straight to your inbox.
+            </p>
+
+            <PlaybookForm />
+
+            <p className="text-text-muted text-sm mt-6 text-center">
+              12 pages. Zero fluff. Read it in one sitting.
+            </p>
+          </div>
         </div>
 
-        {/* What's inside */}
-        <h2 className="text-2xl font-bold mb-6 text-center">What's inside</h2>
-        <ul className="space-y-4">
-          {insideItems.map((item) => (
-            <li key={item} className="flex items-start gap-3">
-              <span className="flex-shrink-0 w-8 h-8 rounded-full gradient-bg flex items-center justify-center mt-0.5">
-                <Flame size={16} className="text-white" />
-              </span>
-              <span className="text-text-secondary text-lg">{item}</span>
-            </li>
-          ))}
-        </ul>
+        {/* Reinforcement for anyone who scrolls */}
+        <div className="max-w-3xl mx-auto">
+          {/* What's inside */}
+          <h2 className="text-2xl font-bold mb-6 text-center">What's inside</h2>
+          <ul className="space-y-4">
+            {insideItems.map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-8 h-8 rounded-full gradient-bg flex items-center justify-center mt-0.5">
+                  <Flame size={16} className="text-white" />
+                </span>
+                <span className="text-text-secondary text-lg">{item}</span>
+              </li>
+            ))}
+          </ul>
 
-        {/* Trust line */}
-        <p className="text-text-muted text-sm mt-5 text-center">
-          12 pages. Zero fluff. Built from 4 years of managing creators.
-        </p>
-
-        {/* Filter callout */}
-        <div className="my-12 rounded-xl border border-accent-purple/40 bg-accent-purple/5 p-6 text-center">
-          <p className="text-text-primary text-lg">
-            Built for creators who are already earning and ready to scale. If
-            you're just getting started, this will still be here when you are.
+          {/* Trust line */}
+          <p className="text-text-muted text-sm mt-5 text-center">
+            Built from 4 years of managing creators.
           </p>
-        </div>
 
-        {/* Form section */}
-        <div className="bg-background-light rounded-2xl p-8 sm:p-10 shadow-xl">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">
-            Get the playbook
-          </h2>
+          {/* Filter callout */}
+          <div className="my-12 rounded-xl border border-accent-purple/40 bg-accent-purple/5 p-6 text-center">
+            <p className="text-text-primary text-lg">
+              Built for creators who are already earning and ready to scale. If
+              you're just getting started, this will still be here when you are.
+            </p>
+          </div>
 
-          <PlaybookForm />
-
-          {/* Small print */}
-          <p className="text-text-muted text-sm mt-6 text-center">
-            Sent straight to your inbox. Read it in one sitting.
-          </p>
+          {/* Secondary CTA jumps back up to the form */}
+          <div className="text-center">
+            <a
+              href="#get-the-playbook"
+              className="btn-primary text-lg px-8 py-4 inline-flex items-center justify-center"
+            >
+              Get the playbook
+            </a>
+          </div>
         </div>
       </div>
     </PageShell>
