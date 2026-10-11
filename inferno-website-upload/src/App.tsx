@@ -10,6 +10,8 @@ import ApplicationCTA from "./components/ApplicationCTA";
 import Footer from "./components/Footer";
 import ThankYouPage from "./components/ThankYouPage";
 import PlaybookThankYouPage from "./components/PlaybookThankYouPage";
+import VegasOctober from "./components/pages/VegasOctober";
+import VegasThankYouPage from "./components/VegasThankYouPage";
 import BlogIndex from "./components/BlogIndex";
 import BlogPostPage from "./components/BlogPostPage";
 import WhatWeHandle from "./components/pages/WhatWeHandle";
@@ -68,6 +70,8 @@ function App() {
         <Route path="/vegas-shoots" element={<VegasShoots />} />
         <Route path="/fit" element={<SeeIfYouFit />} />
         <Route path="/playbook" element={<Playbook />} />
+        <Route path="/vegas" element={<VegasOctober />} />
+        <Route path="/vegas-thank-you" element={<VegasThankYouPage />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         {/* Any unknown path redirects home — no blank pages for ad traffic. */}
