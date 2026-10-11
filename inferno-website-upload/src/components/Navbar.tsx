@@ -68,6 +68,9 @@ const Navbar: React.FC = () => {
               {item.label}
             </a>
           ))}
+          <Link to="/vegas" className="nav-link">
+            Vegas Shoot
+          </Link>
           <Link to="/blog" className="nav-link">
             Blog
           </Link>
@@ -103,6 +106,13 @@ const Navbar: React.FC = () => {
               {item.label}
             </a>
           ))}
+          <Link
+            to="/vegas"
+            className="text-xl nav-link"
+            onClick={() => setIsOpen(false)}
+          >
+            Vegas Shoot
+          </Link>
           <Link
             to="/blog"
             className="text-xl nav-link"
