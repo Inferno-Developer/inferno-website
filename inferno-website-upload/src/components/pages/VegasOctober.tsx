@@ -62,7 +62,7 @@ const VegasOctober: React.FC = () => {
                 Las Vegas · October 21 to 24 · 8 slots
               </p>
               <h1 className="text-2xl sm:text-4xl font-bold leading-tight">
-                Apply for a free Las Vegas content shoot.
+                Apply for 1 of 8 free Vegas content shoots.
               </h1>
             </div>
 
