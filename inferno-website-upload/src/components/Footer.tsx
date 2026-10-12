@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import XIcon from "./icons/XIcon";
 
 // Update these two if the handles ever change.
-const INSTAGRAM_URL = "https://www.instagram.com/inferno_mgmt/";
+const INSTAGRAM_URL = "https://www.instagram.com/hottest_inferno/";
 const X_URL = "https://x.com/inferno__agency";
 
 const Footer: React.FC = () => {
