@@ -59,6 +59,25 @@ const FORMS = {
       fldBAdVkkeYXpQD0z: "Playbook", // Source (single select)
     },
   },
+  // Vegas in-person shoot lead magnet (/vegas landing page, native on-site
+  // form). Short application: Name, Email, Instagram. The Instagram value is
+  // written to both the Instagram Handle field (names the record) and the IG
+  // Link field (clickable URL for quick review). Source is set directly here,
+  // so this does not depend on the "Vegas Shoot Source Tag" automation. It
+  // stays clear of the "Creator Application Received" automation (which needs
+  // the currency income field) and "Playbook Delivery" (Source = Playbook).
+  vegas: {
+    table: "Leads",
+    map: {
+      name: { id: "fldMp2PQOT5JeZeaz" }, // Name
+      email: { id: "fldZfKiDechvnjYr5" }, // Email
+      instagram: { id: "fldmxBmlwnpqa0T1p" }, // Instagram Handle (names the record)
+      igLink: { id: "fldWP5HGY69o0zJgQ" }, // IG Link (clickable URL)
+    },
+    constants: {
+      fldBAdVkkeYXpQD0z: "Vegas October Shoot", // Source (single select)
+    },
+  },
 };
 
 export const handler = async (event) => {
