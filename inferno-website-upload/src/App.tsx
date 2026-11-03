@@ -12,6 +12,8 @@ import ThankYouPage from "./components/ThankYouPage";
 import PlaybookThankYouPage from "./components/PlaybookThankYouPage";
 import VegasOctober from "./components/pages/VegasOctober";
 import VegasThankYouPage from "./components/VegasThankYouPage";
+import FiftyIdeas from "./components/pages/FiftyIdeas";
+import FiftyIdeasThankYouPage from "./components/FiftyIdeasThankYouPage";
 import BlogIndex from "./components/BlogIndex";
 import BlogPostPage from "./components/BlogPostPage";
 import WhatWeHandle from "./components/pages/WhatWeHandle";
@@ -72,6 +74,8 @@ function App() {
         <Route path="/playbook" element={<Playbook />} />
         <Route path="/vegas" element={<VegasOctober />} />
         <Route path="/vegas-thank-you" element={<VegasThankYouPage />} />
+        <Route path="/50-ideas" element={<FiftyIdeas />} />
+        <Route path="/50-ideas-thank-you" element={<FiftyIdeasThankYouPage />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         {/* Any unknown path redirects home — no blank pages for ad traffic. */}
