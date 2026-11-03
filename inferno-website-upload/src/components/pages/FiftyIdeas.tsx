@@ -1,5 +1,5 @@
 import React from "react";
-import { Flame, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import IdeasForm from "../IdeasForm";
@@ -37,36 +37,34 @@ const FiftyIdeas: React.FC = () => {
       <Navbar />
 
       <main className="flex-1 pb-28 md:pb-0">
-        {/* HERO — tight so the CTA is tappable without scrolling on mobile */}
-        <section className="relative overflow-hidden pt-20 md:pt-32 pb-12">
+        {/* HERO + FORM — kept tight so the form is at the top of the page and
+            easy to start filling out without scrolling on mobile. */}
+        <section
+          id="apply"
+          className="relative overflow-hidden pt-20 md:pt-28 pb-10 scroll-mt-20"
+        >
           <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-accent-purple/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-accent-magenta/5 rounded-full blur-3xl"></div>
 
           <div className="container-custom relative z-10">
-            <div className="max-w-3xl mx-auto text-center">
-              <p className="text-accent-purple tracking-widest text-xs sm:text-sm font-semibold mb-3 uppercase">
+            <div className="max-w-2xl mx-auto text-center mb-5">
+              <p className="text-accent-purple tracking-widest text-xs sm:text-sm font-semibold mb-2 uppercase">
                 Free for creators
               </p>
-              <h1 className="text-3xl sm:text-5xl font-bold leading-tight mb-5">
+              <h1 className="text-2xl sm:text-4xl font-bold leading-tight">
                 50 Instagram video ideas you have not seen before.
               </h1>
-              <p className="text-base sm:text-xl text-text-secondary mb-7 max-w-2xl mx-auto">
-                Not a list scraped off somebody's feed. These are the concepts
-                we write for the creators we manage, every single week. Tell us
-                about your page and we will send the whole list.
-              </p>
+            </div>
 
-              <a
-                href="#apply"
-                className="btn-primary text-lg px-8 py-4 inline-flex items-center justify-center"
-              >
-                Get the 50 ideas
-              </a>
-
-              <p className="text-text-muted text-sm mt-5 max-w-xl mx-auto">
-                Free, and yours to keep whether or not we end up working
-                together.
-              </p>
+            {/* Native application form — dark card, matches the rest of the site */}
+            <div className="max-w-xl mx-auto">
+              <div className="bg-background-light rounded-2xl p-6 sm:p-10 shadow-xl">
+                <p className="text-text-secondary text-center mb-6">
+                  Tell us about your page and we will send the whole list. Takes
+                  about two minutes.
+                </p>
+                <IdeasForm />
+              </div>
             </div>
           </div>
         </section>
@@ -129,28 +127,9 @@ const FiftyIdeas: React.FC = () => {
                 We write these plans weekly for our roster. Handing you 50 of
                 them costs us nothing, and it is a more honest introduction than
                 a sales pitch. If you want help running the rest of it, the form
-                below is also how you apply. If you just want the ideas, take
+                above is also how you apply. If you just want the ideas, take
                 them.
               </p>
-            </div>
-          </div>
-        </section>
-
-        {/* THE LIST — the form */}
-        <section id="apply" className="py-12 scroll-mt-20">
-          <div className="container-custom">
-            <div className="max-w-xl mx-auto">
-              <div className="text-center mb-8">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-3">
-                  Tell us about your page and we will send the list.
-                </h2>
-                <p className="text-text-secondary">
-                  Takes about two minutes. We read every one of these.
-                </p>
-              </div>
-              <div className="bg-background-light rounded-2xl p-6 sm:p-10 shadow-xl">
-                <IdeasForm />
-              </div>
             </div>
           </div>
         </section>
@@ -184,8 +163,8 @@ const FiftyIdeas: React.FC = () => {
 
       <Footer />
 
-      {/* STICKY MOBILE CTA — jumps to the form. Hidden on desktop. Sits below
-          the cookie banner (z-50) until it is dismissed. */}
+      {/* STICKY MOBILE CTA — jumps up to the form. Hidden on desktop. Sits
+          below the cookie banner (z-50) until it is dismissed. */}
       <div className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-background-dark/95 backdrop-blur border-t border-gray-800 px-4 py-3">
         <a
           href="#apply"
