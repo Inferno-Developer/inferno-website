@@ -78,6 +78,29 @@ const FORMS = {
       fldBAdVkkeYXpQD0z: "Vegas October Shoot", // Source (single select)
     },
   },
+  // 50 Instagram video ideas lead magnet (/50-ideas). Same qualifiers as a
+  // creator application, tagged Source = "50 Video Ideas" so a separate
+  // Airtable automation can deliver the list. Status is set to New Inbound and
+  // the currency income field is filled, so this intentionally reads as a
+  // creator application too (it will also satisfy the "Creator Application
+  // Received" automation). typecast creates the "50 Video Ideas" Source option
+  // on the first submission if it has not been added in the Airtable UI yet.
+  ideas: {
+    table: "Leads",
+    map: {
+      name: { id: "fldMp2PQOT5JeZeaz" }, // Name
+      email: { id: "fldZfKiDechvnjYr5" }, // Email
+      igLink: { id: "fldWP5HGY69o0zJgQ" }, // IG Link (url)
+      creatingFor: { id: "fldUsIoeIGxYikOLD" }, // Time on Platform (single select)
+      followers: { id: "fldPZ6IVl277gm32S" }, // Instagram Followers (single select)
+      monthlyIncome: { id: "fldSMqTI72cUdH9cW", type: "float" }, // Monthly income (currency)
+      country: { id: "fldZXpDw3wdhsBQ4a" }, // Country (single select)
+    },
+    constants: {
+      fldBAdVkkeYXpQD0z: "50 Video Ideas", // Source (single select)
+      fldheR0vPJP6L5elW: "New Inbound", // Status (single select)
+    },
+  },
 };
 
 export const handler = async (event) => {
