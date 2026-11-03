@@ -18,7 +18,7 @@
 const BASE_ID = process.env.AIRTABLE_BASE_ID || "appZ57oHkxygjxP2t";
 const TABLE = "Blog";
 
-exports.handler = async () => {
+export const handler = async () => {
   const token = process.env.AIRTABLE_TOKEN;
   if (!token) {
     return json(500, { error: "AIRTABLE_TOKEN is not configured." });
