@@ -24,14 +24,6 @@ const FOLLOWER_BANDS = [
   "Over 100,000",
 ];
 
-const COUNTRIES = [
-  "United States",
-  "Canada",
-  "Australia",
-  "United Kingdom",
-  "Other",
-];
-
 const inputStyle =
   "w-full px-4 py-3 bg-background border border-gray-700 rounded-lg text-sm text-text-primary placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-accent-purple";
 
@@ -44,7 +36,6 @@ const IdeasForm: React.FC = () => {
     creatingFor: "",
     followers: "",
     monthlyIncome: "",
-    country: "",
   });
   const [submitting, setSubmitting] = useState(false);
 
@@ -148,23 +139,6 @@ const IdeasForm: React.FC = () => {
         placeholder="Monthly income from your content (USD)"
         className={inputStyle}
       />
-
-      <select
-        name="country"
-        value={formData.country}
-        onChange={handleChange}
-        required
-        className={`${inputStyle} appearance-none`}
-      >
-        <option value="" disabled>
-          Country
-        </option>
-        {COUNTRIES.map((o) => (
-          <option key={o} value={o}>
-            {o}
-          </option>
-        ))}
-      </select>
 
       <button
         type="submit"
